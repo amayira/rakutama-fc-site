@@ -1,0 +1,317 @@
+/* Rakutama FC — Production styles */
+
+:root {
+  --rk-primary: #0097b2;
+  --rk-primary-ink: #007588;
+  --rk-accent: #ffd21f;
+  --rk-ink: #333333;
+  --rk-ink-2: #666666;
+  --rk-ink-3: #999999;
+  --rk-base: #ffffff;
+  --rk-base-2: #f8f9fa;
+  --rk-rule: #e6e8eb;
+  --rk-rule-strong: #c9ced3;
+
+  --rk-font-jp-serif: "Noto Serif JP", "Hiragino Mincho ProN", "游明朝", serif;
+  --rk-font-jp-sans: "Noto Sans JP", "Hiragino Sans", "游ゴシック", sans-serif;
+  --rk-font-num: "Manrope", "Inter", -apple-system, sans-serif;
+  --rk-font-mono: "JetBrains Mono", "Menlo", monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+/* ---- Page surface ---- */
+.rk-page {
+  font-family: var(--rk-font-jp-sans);
+  color: var(--rk-ink);
+  background: var(--rk-base);
+  font-size: 14px;
+  line-height: 1.7;
+  font-feature-settings: "palt";
+}
+.rk-page * { box-sizing: border-box; }
+
+/* ---- Header ---- */
+.rk-header {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 40px;
+  border-bottom: 1px solid var(--rk-rule);
+  background: #fff;
+  position: sticky; top: 0; z-index: 100;
+}
+.rk-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.rk-logo .mark {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--rk-primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--rk-font-num); font-weight: 700; font-size: 14px;
+  flex-shrink: 0;
+}
+.rk-logo .name {
+  font-family: var(--rk-font-jp-serif); font-weight: 500;
+  font-size: 16px; letter-spacing: 0.05em;
+}
+.rk-logo .sub { color: var(--rk-ink-2); font-size: 11px; margin-left: 8px; letter-spacing: 0.1em; }
+.rk-nav { display: flex; gap: 28px; font-size: 13px; color: var(--rk-ink); }
+.rk-nav a { color: inherit; text-decoration: none; transition: color .15s; }
+.rk-nav a:hover { color: var(--rk-primary); }
+.rk-header .home-link {
+  font-size: 11px; color: var(--rk-ink-2); border: 1px solid var(--rk-rule);
+  padding: 6px 12px; border-radius: 999px; text-decoration: none;
+  transition: border-color .15s, color .15s;
+}
+.rk-header .home-link:hover { border-color: var(--rk-primary); color: var(--rk-primary); }
+
+/* ---- Image placeholder ---- */
+.rk-img {
+  position: relative; overflow: hidden;
+  background:
+    repeating-linear-gradient(135deg, rgba(0,0,0,.025) 0 1px, transparent 1px 8px),
+    var(--rk-base-2);
+  border: 1px dashed var(--rk-rule-strong);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--rk-ink-2);
+}
+.rk-img .rk-img-label {
+  font-family: var(--rk-font-mono); font-size: 11px;
+  padding: 4px 10px; background: rgba(255,255,255,.85);
+  border: 1px solid var(--rk-rule); border-radius: 3px;
+  letter-spacing: 0.02em; text-align: center; max-width: 80%;
+}
+.rk-img.tint {
+  background:
+    repeating-linear-gradient(135deg, rgba(0,151,178,.04) 0 1px, transparent 1px 8px),
+    rgba(0,151,178,.04);
+}
+
+/* ---- Typography ---- */
+.rk-h1 {
+  font-family: var(--rk-font-jp-serif);
+  font-weight: 500;
+  font-size: 44px; line-height: 1.45; letter-spacing: 0.02em;
+  color: var(--rk-ink);
+  margin: 0;
+}
+.rk-h1 .em { color: var(--rk-primary); }
+.rk-h2 {
+  font-family: var(--rk-font-jp-serif);
+  font-weight: 500;
+  font-size: 32px; line-height: 1.5; letter-spacing: 0.04em;
+  color: var(--rk-ink);
+  margin: 0;
+}
+.rk-h3 {
+  font-family: var(--rk-font-jp-serif);
+  font-weight: 500;
+  font-size: 22px; line-height: 1.55; letter-spacing: 0.04em;
+  color: var(--rk-ink);
+  margin: 0;
+}
+.rk-eyebrow {
+  font-family: var(--rk-font-num); font-weight: 600; font-size: 12px;
+  letter-spacing: 0.2em; color: var(--rk-primary); text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.rk-eyebrow::before {
+  content: ""; width: 24px; height: 1px; background: var(--rk-primary);
+}
+.rk-eyebrow-jp {
+  font-family: var(--rk-font-jp-sans); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.3em; color: var(--rk-primary);
+}
+.rk-lead {
+  font-size: 15px; color: var(--rk-ink-2); line-height: 1.95;
+}
+.rk-num {
+  font-family: var(--rk-font-num); font-weight: 600;
+  font-feature-settings: "tnum";
+}
+
+/* ---- CTA buttons ---- */
+.rk-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 56px; padding: 0 32px; border-radius: 4px;
+  font-family: var(--rk-font-jp-sans); font-weight: 500; font-size: 15px;
+  letter-spacing: 0.1em; text-decoration: none; cursor: pointer; border: 0;
+  transition: transform .15s, box-shadow .15s, background .15s;
+}
+.rk-btn.primary {
+  background: var(--rk-accent); color: var(--rk-ink);
+  box-shadow: 0 2px 0 rgba(0,0,0,.05);
+}
+.rk-btn.primary::after {
+  content: "→"; margin-left: 14px; font-family: var(--rk-font-num);
+}
+.rk-btn.primary:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+.rk-btn.secondary {
+  background: transparent; color: var(--rk-primary); border: 1px solid var(--rk-primary);
+}
+.rk-btn.secondary::after { content: "→"; margin-left: 14px; font-family: var(--rk-font-num); }
+.rk-btn.secondary:hover { background: rgba(0,151,178,.05); }
+.rk-btn.small { height: 44px; padding: 0 22px; font-size: 13px; }
+.rk-btn.dark {
+  background: var(--rk-primary); color: #fff;
+}
+.rk-btn.dark::after { content: "→"; margin-left: 14px; font-family: var(--rk-font-num); }
+
+/* ---- Section container ---- */
+.rk-section {
+  padding: 96px 80px;
+  border-bottom: 1px solid var(--rk-rule);
+}
+.rk-section.tight { padding: 64px 80px; }
+.rk-section.base-2 { background: var(--rk-base-2); }
+.rk-section.primary-band { background: var(--rk-primary); color: #fff; }
+.rk-section.primary-band .rk-h2,
+.rk-section.primary-band .rk-h3 { color: #fff; }
+.rk-section.primary-band .rk-lead { color: rgba(255,255,255,.85); }
+.rk-section.primary-band .rk-eyebrow,
+.rk-section.primary-band .rk-eyebrow-jp { color: var(--rk-accent); }
+.rk-section.primary-band .rk-eyebrow::before { background: var(--rk-accent); }
+
+.rk-section-head {
+  display: flex; flex-direction: column; gap: 16px;
+  margin-bottom: 56px; max-width: 720px;
+}
+.rk-section-head.center { align-items: center; text-align: center; margin-left: auto; margin-right: auto; }
+
+/* ---- Footer ---- */
+.rk-footer {
+  background: #1f2528; color: rgba(255,255,255,.75);
+  padding: 64px 80px 40px; font-size: 13px;
+}
+.rk-footer .rk-h3 { color: #fff; font-size: 16px; }
+.rk-footer a { color: rgba(255,255,255,.6); text-decoration: none; transition: color .15s; }
+.rk-footer a:hover { color: rgba(255,255,255,.9); }
+.rk-footer hr { border: 0; border-top: 1px solid rgba(255,255,255,.12); margin: 32px 0 20px; }
+
+/* ---- Tag / chip ---- */
+.rk-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 3px;
+  font-size: 11px; letter-spacing: 0.1em;
+  background: rgba(0,151,178,.08); color: var(--rk-primary);
+  font-weight: 500;
+}
+.rk-chip.accent { background: rgba(255,210,31,.2); color: #806400; }
+.rk-chip.outline { background: transparent; border: 1px solid var(--rk-rule); color: var(--rk-ink-2); }
+
+/* ---- Card ---- */
+.rk-card {
+  background: #fff; border: 1px solid var(--rk-rule);
+  padding: 32px; border-radius: 4px;
+}
+.rk-card.tint { background: rgba(0,151,178,.03); border-color: rgba(0,151,178,.15); }
+
+/* ---- Stat block ---- */
+.rk-stat {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.rk-stat .num {
+  font-family: var(--rk-font-num); font-weight: 600;
+  font-size: 56px; line-height: 1; color: var(--rk-ink);
+  letter-spacing: -0.02em;
+}
+.rk-stat .num .unit {
+  font-family: var(--rk-font-jp-sans); font-weight: 500;
+  font-size: 16px; margin-left: 4px; color: var(--rk-ink-2);
+}
+.rk-stat .num.accent {
+  background: linear-gradient(180deg, transparent 60%, var(--rk-accent) 60%);
+  display: inline-block; padding: 0 4px;
+}
+.rk-stat .label {
+  font-size: 12px; color: var(--rk-ink-2); letter-spacing: 0.15em;
+}
+
+/* ---- Comparison table ---- */
+.rk-cmp { width: 100%; border-collapse: collapse; font-size: 13px; }
+.rk-cmp th, .rk-cmp td {
+  padding: 16px 14px; text-align: left; border-bottom: 1px solid var(--rk-rule);
+  vertical-align: top;
+}
+.rk-cmp th {
+  font-family: var(--rk-font-jp-serif); font-weight: 500; font-size: 14px;
+  background: var(--rk-base-2);
+  color: var(--rk-ink-2);
+}
+.rk-cmp th.us {
+  background: rgba(0,151,178,.06);
+  color: var(--rk-primary);
+  position: relative;
+}
+.rk-cmp th.us::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--rk-primary);
+}
+.rk-cmp tbody th { background: #fff; color: var(--rk-ink); font-weight: 500; }
+.rk-cmp td.us { background: rgba(0,151,178,.04); color: var(--rk-ink); font-weight: 500; }
+.rk-cmp .hl { background: rgba(255,210,31,.25); padding: 1px 4px; }
+
+/* ---- Persona card ---- */
+.rk-persona-card {
+  background: #fff; border: 1px solid var(--rk-rule);
+  padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 16px;
+  position: relative; transition: border-color .15s, transform .15s;
+  cursor: pointer;
+}
+.rk-persona-card:hover { border-color: var(--rk-primary); transform: translateY(-2px); }
+.rk-persona-card .badge {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--rk-primary);
+  color: var(--rk-primary); font-family: var(--rk-font-num); font-weight: 600;
+  display: flex; align-items: center; justify-content: center; font-size: 14px;
+}
+.rk-persona-card.preparing { opacity: 0.7; }
+.rk-persona-card.preparing .badge { border-color: var(--rk-ink-3); color: var(--rk-ink-3); }
+.rk-persona-card .arrow {
+  margin-top: 8px; font-family: var(--rk-font-num); color: var(--rk-primary);
+}
+
+/* ---- Spec line ---- */
+.rk-spec { display: grid; grid-template-columns: 200px 1fr; gap: 12px 24px; padding: 18px 0; border-bottom: 1px solid var(--rk-rule); }
+.rk-spec dt { color: var(--rk-ink-2); font-size: 13px; font-weight: 500; }
+.rk-spec dd { margin: 0; color: var(--rk-ink); font-size: 14px; }
+
+/* ---- Soroban bead motif ---- */
+.rk-bead {
+  display: inline-block; width: var(--s, 14px); height: calc(var(--s, 14px) * 0.6);
+  border-radius: 999px;
+  background: var(--rk-primary);
+}
+.rk-bead.accent { background: var(--rk-accent); }
+
+/* ---- Hero overlay copy ---- */
+.hero-overlay-copy .rk-h1 {
+  color: #fff;
+  font-size: 56px;
+  text-shadow: 0 2px 24px rgba(0,0,0,.25);
+}
+.hero-overlay-copy .rk-h1 .em {
+  color: var(--rk-accent);
+}
+.hero-overlay-copy .rk-lead {
+  color: rgba(255,255,255,.9);
+  max-width: 560px !important;
+  margin: 0 auto;
+}
+
+/* ---- Disclaimer note ---- */
+.rk-disclaimer {
+  font-size: 11px; color: var(--rk-ink-3); margin-top: 12px; letter-spacing: 0.05em;
+}
+
+/* ---- FAQ accordion ---- */
+details { border-top: 1px solid var(--rk-rule); }
+details summary { list-style: none; cursor: pointer; }
+details summary::-webkit-details-marker { display: none; }
+details[open] summary .faq-toggle { transform: rotate(45deg); }
+.faq-toggle { transition: transform .2s; display: inline-block; }
+
+/* ---- Breadcrumb ---- */
+.rk-breadcrumb {
+  padding: 20px 80px; font-size: 12px; color: var(--rk-ink-2);
+  border-bottom: 1px solid var(--rk-rule);
+  display: flex; gap: 10px;
+}
+.rk-breadcrumb a { color: inherit; text-decoration: none; }
+.rk-breadcrumb a:hover { color: var(--rk-primary); }

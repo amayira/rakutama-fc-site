@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fc-site",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "8787", "/Users/ariyama/Downloads/楽珠FC募集サイト-prod"],
+      "port": 8787
+    }
+  ]
+}
