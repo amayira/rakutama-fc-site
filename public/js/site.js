@@ -3,8 +3,8 @@
    - UTMパラメータの引き継ぎ（広告計測用）
 */
 
-// 送信先エンドポイント（Cloudflare Worker 等）。未設定の間はフォーム送信をブロックする
-var FORM_ENDPOINT = "";
+// 送信先エンドポイント（rakutama-kintone worker → kintone App20 FC説明会リード）
+var FORM_ENDPOINT = "https://rakutama-kintone.k-ariyama.workers.dev/api/fc-lead";
 
 // ---- UTM をセッション中保持し、hidden フィールドとサンクスページへ引き継ぐ ----
 (function () {
