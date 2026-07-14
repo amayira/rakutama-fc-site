@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fc-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8930", "--directory", "public"],
+      "port": 8930
+    }
+  ]
+}
