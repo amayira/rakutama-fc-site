@@ -1,7 +1,31 @@
 /* 楽珠FC募集サイト 共通JS
    - フォーム送信（FORM_ENDPOINT 設定後に有効化）
    - UTMパラメータの引き継ぎ（広告計測用）
+   - スクロール連動のフェードイン（.reveal）
 */
+
+// ---- .reveal をビューポート進入時にフェードイン ----
+document.addEventListener("DOMContentLoaded", function () {
+  var targets = document.querySelectorAll(".reveal");
+  if (!targets.length) return;
+
+  // 動きを減らす設定・IO非対応環境では即座に表示（コンテンツを隠さない）
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) {
+    targets.forEach(function (el) { el.classList.add("in"); });
+    return;
+  }
+
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  targets.forEach(function (el) { obs.observe(el); });
+});
 
 // 送信先エンドポイント（rakutama-kintone worker → kintone App20 FC説明会リード）
 var FORM_ENDPOINT = "https://rakutama-kintone.k-ariyama.workers.dev/api/fc-lead";

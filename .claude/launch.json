@@ -4,7 +4,7 @@
     {
       "name": "fc-site",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8930", "--directory", "public"],
+      "runtimeArgs": ["-m", "http.server", "8930", "--directory", "."],
       "port": 8930
     }
   ]
