@@ -92,19 +92,19 @@ body {
 .rk-header {
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   height: 64px; padding: 0 var(--pad-x);
-  background: var(--b1);
-  border-bottom: 2px solid var(--b3);
+  background: #fff;
+  border-bottom: 1px solid var(--border);
   position: sticky; top: 0; z-index: 200;
 }
-.rk-logo { display: flex; align-items: center; gap: 10px; color: #fff; min-width: 0; }
-.rk-logo img { height: 30px; width: auto; background: #fff; border-radius: 3px; padding: 2px 5px; }
+.rk-logo { display: flex; align-items: center; gap: 10px; color: var(--ink); min-width: 0; }
+.rk-logo img { height: 30px; width: auto; }
 .rk-logo .sub {
-  color: rgba(255, 255, 255, .7); font-size: 11px; letter-spacing: .12em; white-space: nowrap;
-  border-left: 1px solid rgba(255, 255, 255, .3); padding-left: 10px;
+  color: var(--sub); font-size: 11px; letter-spacing: .12em; white-space: nowrap;
+  border-left: 1px solid var(--bline); padding-left: 10px;
 }
 .rk-nav { display: flex; gap: 24px; font-size: 13px; align-items: center; }
-.rk-nav a { color: rgba(255, 255, 255, .82); transition: color .15s; white-space: nowrap; }
-.rk-nav a:hover { color: var(--y1); }
+.rk-nav a { color: var(--ink); transition: color .15s; white-space: nowrap; }
+.rk-nav a:hover { color: var(--b2); }
 .rk-header .rk-btn { height: 42px; padding: 0 18px; font-size: 13px; }
 @media (max-width: 800px) {
   .rk-nav { display: none; }
