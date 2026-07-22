@@ -272,6 +272,7 @@ body {
   color: var(--b1);
 }
 .rk-stat .num .unit { font-family: var(--rk-font-jp); font-weight: 700; font-size: 16px; margin-left: 4px; color: var(--b2); }
+.rk-stat .num .prefix { font-family: var(--rk-font-jp); font-weight: 700; font-size: 16px; margin-right: 2px; }
 .rk-stat .label { font-size: 12px; color: var(--ink); font-weight: 700; letter-spacing: .08em; }
 .rk-stat .desc { font-size: 12px; color: var(--sub); line-height: 1.75; }
 .rk-statgrid { border: 1px solid var(--border); background: #fff; box-shadow: var(--sh); border-radius: var(--rad-card); overflow: hidden; }
